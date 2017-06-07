@@ -1,0 +1,61 @@
+<ion-content ionScroll='true' #Content>
+    <ul class="ulPass">
+    <li class="logo_bar"><div class="dect_bar"><img src="assets/images/logo1.png"/></div></li>
+    <span *ngIf="getLicese"> 
+    <li >
+      <input type="number" [(ngModel)]="phone" maxlength="11" class="int" (focus)="toBottom()"  placeholder="手机号"/>
+    </li>
+    <li class="liceseBox">
+      <div class="inpBar">
+          <input type="number" [(ngModel)]="phoneYzm" maxlength="8" class="inp" (focus)="toBottom()"  placeholder="验证码"/>
+      </div>
+      <div class="LiceseBtn"><button ion-button full clear class="btn" [disabled]="!phone||!VCode" (click)="getVCode()">{{"获取短信"+(gotoNum?(" "+gotoNum):"")}}</button></div>
+      
+    </li>
+
+    <li class="btn_bar"><button ion-button class="btn" [disabled]="!phone||!phoneYzm" (click)="toRegDx()">下一步</button></li>
+    </span> 
+    <span *ngIf="!getLicese">
+    <li *ngIf="showPW">
+        
+        <div class="float-left fullW">
+        <input type="password" [(ngModel)]="passWord"  class="int" (focus)="toBottom()"  placeholder="密码"/>
+        </div>
+        <div class="icon-bar">
+            <ion-icon name="md-eye-off" class="iconColrTow" (click)="clikFun(1)"></ion-icon>
+        </div>
+    </li>
+    <li *ngIf="!showPW">
+        <div class="float-left fullW">
+        <input type="text" [(ngModel)]="passWord"  class="int" (focus)="toBottom()"  placeholder="密码"/>
+        </div>
+        <div class="icon-bar">
+            <ion-icon name="md-eye" class="iconColrTow" (click)="clikFun(1)"></ion-icon>
+        </div>
+    </li>
+        <li *ngIf="showPW1">
+        <div class="float-left fullW">
+        <input type="password" [(ngModel)]="repassWord"  class="int" (focus)="toBottom()"  placeholder="再次输入密码"/>
+        </div>
+        <div class="icon-bar">
+            <ion-icon name="md-eye-off" class="iconColrTow" (click)="clikFun(2)"></ion-icon>
+        </div>
+    </li>
+    <li *ngIf="!showPW1">
+        <div class="float-left fullW">
+        <input type="text" [(ngModel)]="repassWord"  class="int" (focus)="toBottom()"  placeholder="再次输入密码"/>
+        </div>
+       <div class="icon-bar">
+            <ion-icon name="md-eye" class="iconColrTow" (click)="clikFun(2)"></ion-icon>
+        </div>
+    </li>
+    <li class="btn_bar"><button ion-button class="btn" [disabled]="!repassWord||!passWord" (click)="toPassWord()">注册</button></li>
+    </span>
+    
+    <li class="goResige"><div class="reg_btn " (click)="goLogin()">去登录</div></li>    
+    <!--<li class="tip_login" *ngIf="pdFrist">小提示：初始密码为手机号，可在个人中心修改！</li>-->
+    <li class="publicImg"><div class="public">2017 密我科技</div></li>
+</ul>      
+    
+
+</ion-content>

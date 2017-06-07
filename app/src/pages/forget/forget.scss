@@ -1,0 +1,227 @@
+forget-page{
+  ion-content{
+    background-color:#dcdddd;
+      background-size:100%;
+      &.content-ios,
+      &.content-md{
+          background-color:#dcdddd;
+          background-size:100%;
+       
+      } 
+      ul.ulPass{
+          position:absolute;
+          top:50%;
+          left:0;
+          margin: 0;
+          width:100%;
+          padding:0 15%;    
+          margin: auto ;
+          height:0;
+          background-color:transparent;
+        .logo_bar{
+            position: relative;
+            top:0;
+            left: 0;
+            width:100%;
+            border-bottom: 0;
+            .dect_bar{
+                position:absolute;
+                top:-270px;
+                width:100%;
+                height:52px;
+                text-align: center;
+                img{
+                    display: inline-block;                   
+                    width:52px;
+                    height:52px;
+                    border-radius: 50%;
+                    margin: auto; 
+                  }
+             }
+        }
+        }       
+          li{
+              list-style: none;
+              border-bottom:1px solid #bbb;
+              margin-top:8px;
+              width:100%;
+              height:34px;
+              font-size:1.2rem;
+              line-height:34px;
+              &::after{
+                  content: "";
+                  display: block;
+                  clear: both;
+              }
+              &.liceseBox{
+                  border-bottom: none;
+              }
+              &.tip_login{
+                  color:#666;
+                  text-align: left;
+                  padding:6px 5px;
+                  font-size:1.2rem;
+                  line-height:24px;
+                  border:none;
+              }
+
+              .icon-bar{
+                  position:relative;
+                  width:100%;
+                  height:0px;
+                  ion-icon{
+                  &.iconColr{
+                  position:absolute;
+                  top:0;
+                  left:2px;
+                  width:34px;
+                  height:34px;
+                  color:#666;
+                  line-height:34px;
+                  background-color:transparent;
+                  border:none;
+                  }
+                  &.iconColrTow{
+                  position:absolute;
+                  top:0;
+                  right:5px;
+                  width:34px;
+                  height:34px;
+                  color:#666;
+                  line-height:34px;
+                  background-color:transparent;
+                  border:none;
+                  text-align: right;    
+                  }
+                  
+              }
+              }
+              div.fullW{
+                  width:100%;
+              }
+              .ion-md-lock:before,.ion-ios-phone-portrait-outline:before{
+                      font-size:24px;
+                      color:#666;
+                      text-align:center;
+                      
+                  }
+              .int{
+                  width:100%;
+                  height:34px;
+                  border:0;
+                  background-color:transparent;
+                  max-height:34px;
+                  color:#666;
+              }
+           &.btn_bar{
+               padding:0;
+               margin-top:15px;
+               width:100%;
+               height:30px;
+               border:none;
+               color:#fff;
+              .btn{
+              width:100%;
+              height:30px;
+              background-color:#999;
+              color:#fff;
+              border:none;
+              border-radius:4px;
+              margin:auto;
+              cursor:pointer;
+              font-size:1.6rem;
+              letter-spacing: 8px;
+          }
+           }
+           &.goResige{
+               border:0;
+               width:100%;
+               height:32px;
+               position: relative;
+               top:0;
+               left:0;
+               .reg_btn{
+                   width:40%;
+                   height:32px;
+                   text-align: right;
+                   color:#777;
+                   line-height:32px;
+                   position:absolute;
+                   right:0;
+                   top:0;
+                   padding-right:12px;
+                   letter-spacing:1px;
+                   padding:0;
+                   margin:0;
+               }
+
+           }
+          &.publicImg{
+               width:100%;
+               text-align: center;
+               border-bottom:0;
+                .public{
+                    display: inline-block;
+                    height: 1.2rem;
+                    line-height: 1.2rem;
+                    font-size: 1.2rem;
+                    margin:40px auto auto;
+                    background:url('../assets/images/public.png') no-repeat left ;
+                    background-size:auto 100%;
+                    text-align: center;
+                    text-indent: 1.5rem;
+                    color:#797979;
+                }
+            }         
+         
+          }
+          
+      }
+  }
+  .liceseBox{
+     width:100%;
+      &::after{
+        content: '';
+        display: block;
+        clear: both;
+        }
+        .inpBar{
+        float:left;
+        width:65%;
+        height: 34px;
+        border-bottom:1px solid #bbb;
+        .inp{
+            width:100%;
+            height:34px;
+            border:0;
+            padding:0;
+            font-size:1.2rem;
+            background-color: transparent;
+        }
+        }
+        .LiceseBtn{
+            float:left;                      
+            width:35%;
+            height:34px;
+            overflow: hidden;
+            .btn{
+                width:100%;
+                height:34px;
+                text-align: center;
+                color:#999;
+                padding:0;
+                margin:0;
+                .button-inner{
+                    padding-top:12px;
+                }
+            }
+        }
+      
+  }
+    
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+goodsList-page{
+    .text-income{
+        color:$clrf5;
+        &.frist{
+            padding-top:30px;
+        }
+    }
+    .text-tap{
+        color:$clrf5;
+    }
+    .default{
+            color:$clrf5;
+    }
+    .active{
+        color:#f00;
+    }
+
+    .logobar{
+        padding:20px 0 0px;
+        width:100%;
+        img{
+            display: block;
+            width:32px;
+            height:32px;
+            margin:auto;
+            border-radius: 50%; 
+        }
+    }
+
+
+}

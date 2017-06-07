@@ -1,0 +1,60 @@
+    <!--<ion-list radio-group [(ngModel)]="fontFamily" (ionChange)="changeFontFamily()" class="popover-page" #popoverEles>-->
+    <ion-list radio-group  class="popover-page" #popoverEles>
+      
+      <!--<ion-row>
+        <ion-col>
+          <button (click)="changeFontSize('smaller')" ion-item detail-none class="text-button text-smaller">A</button>
+        </ion-col>
+        <ion-col>
+          <button (click)="changeFontSize('larger')" ion-item detail-none class="text-button text-larger">A</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-dots">
+        <ion-col>
+          <button ion-button="dot" (click)="changeBackground('white')" class="dot-white" [class.selected]="background == 'white'"></button>
+        </ion-col>
+        <ion-col>
+          <button ion-button="dot" (click)="changeBackground('tan')" class="dot-tan" [class.selected]="background == 'tan'"></button>
+        </ion-col>
+        <ion-col>
+          <button ion-button="dot" (click)="changeBackground('grey')" class="dot-grey" [class.selected]="background == 'grey'"></button>
+        </ion-col>
+        <ion-col>
+          <button ion-button="dot" (click)="changeBackground('black')" class="dot-black" [class.selected]="background == 'black'"></button>
+        </ion-col>
+      </ion-row>-->
+      <ion-item class="text-income frist">
+        <ion-label>推广收益</ion-label>
+        <span item-right>申请</span>
+      </ion-item>
+      <ion-item class="text-income">
+        <ion-label>拍卖保证金</ion-label>
+        <span item-right>50元</span>
+      </ion-item>
+      <ion-item class="text-income">
+        <ion-label>竞拍资金</ion-label>
+        <span item-right>15.5元</span>
+      </ion-item>
+      <ion-item class="text-income">
+        <ion-label>金蛋</ion-label>
+        <span item-right>60个</span>
+      </ion-item>
+      <ion-item class="text-tap" (tap)="goBbs(0)">
+        <ion-label>商品状态</ion-label>
+        <ion-icon name="ios-add" item-right></ion-icon>
+      </ion-item>
+      <ion-item class="text-tap" (tap)="goBbs(1)">
+        <ion-label>晒单中心</ion-label>
+        <ion-icon name="ios-add" item-right></ion-icon>
+      </ion-item>
+      <ion-item class="text-tap" (tap)="goBbs(2)">
+        <ion-label>我的关注</ion-label>
+        <ion-icon name="ios-add" item-right></ion-icon>
+      </ion-item>
+      <ion-item class="text-tap" (tap)="goBbs(3)">
+        <ion-label>消息</ion-label>
+        <ion-icon name="ios-add" item-right></ion-icon>
+      </ion-item>
+      <!--logo-->
+      <div class="logobar"><img src="assets/images/logo1.png" alt=""></div>
+    </ion-list>

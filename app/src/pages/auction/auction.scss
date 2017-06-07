@@ -1,0 +1,412 @@
+page-auction{
+    ion-title{
+        letter-spacing: 5px;
+        text-align: center;
+        text-indent: 32px;
+    }
+    ion-content{ 
+        //商品拍卖
+        .goodsInfo{
+            .gdInfoBar{
+                width:100%;
+                margin:0;
+                padding:10px 40px 0px;
+                .main{
+                    color:#222;
+                }
+                .gary{
+                    color:#888;
+                    &.frist{
+                        margin-top:4px;
+                    }
+                }
+                .btnbar{
+                    margin-top:20px;
+                    text-align:center;
+                    .rule{
+                        background-color:#444;
+                        color:#FFF;
+                        height:30px;
+                        margin:0;
+                        box-shadow:none;
+                        border:none;
+                        border-radius:0;
+                    }
+                    .goto{
+                        background-color:#f63333;
+                        color:#FFF;
+                        height:30px;
+                        margin:0;
+                        box-shadow:none;
+                        border:none;
+                        letter-spacing: 5px;
+                        border-radius:0;
+                    }                    
+                }
+                .goodsHr{
+                        margin-top:10px;
+                        background-color:#dedede;
+                }
+            }
+        }
+        //moreGoods
+        .moreGoods{
+            width:100%;
+            padding:0 40px;
+            margin:auto;
+            .title{
+                color:#222;
+                text-align: center;
+                letter-spacing: 2px;
+            }
+            .goodsBox{
+                width:100%;
+                height:auto;
+                padding-bottom: 6px;
+                .more{
+                    width:50%;
+                    height:110px;
+                    float:left;
+                    padding:8px;
+                    overflow:hidden;
+                    img{
+                        max-width:120%;
+                        max-height: 120%;
+                        min-width:100%;
+                        min-height:100%;
+                        
+                    }
+                }
+                &::after{
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    }
+    //蒙版
+    .backdropBar{
+        position:fixed;
+        width:100%;
+        height:100%;
+        z-index:8000;
+        ion-backdrop{
+            opacity:1.0;
+            background-color:rgba(0,0,0,0.56);
+            z-index: 8001;
+        }
+        //Mypopup
+        .Mypopup{
+            position: absolute;
+            color: $clr666;
+            bottom: 0;
+            left: 0;
+            width:100%;
+            height:84%;
+            background-color:$clrPopBC;
+            z-index: 8002;
+            //弹窗内容
+            //scrooll-content
+            .popContent{
+                width:100%;
+                min-height:100%;
+            }
+             //close
+            .GardenBox{
+                position:relative;
+                width:100%;
+                height:25px;
+                top:0;
+                left:0;
+                z-index: 8003;
+                .relate{
+                    position:absolute;
+                    width:50px;
+                    height:50px;
+                    left:50%;
+                    top:0;
+                    margin-top:-25px;
+                    margin-left:-25px;
+                    z-index: 8003;
+                    background-color:$clrPopBC;
+                    border-radius: 50%;
+                    padding:8px;
+                    .garden{
+                        float: left;
+                        position:relative;
+                        top:0;
+                        left:0;
+                        width:34px;
+                        height:34px;
+                        border-radius: 50%;
+                        background-color:$clrf00;
+                        line-height: 34px;
+                        overflow: hidden;
+                        .close{
+                            display: block;
+                            position:absolute;
+                            left:0;
+                            top:0;
+                            width:34px;
+                            height:34px;
+                            padding:10%;
+                            &::before{
+                            content:"";
+                            position:absolute;
+                            top:50%;
+                            left:15%;
+                            width:70%;
+                            height:0px;
+                            margin:auto;
+                            border-bottom: 2px solid $clrfff;
+                            transform: rotate(45deg);
+                            
+
+
+                            }
+                            &::after{
+                            content:"";
+                            position:absolute;
+                            top:50%;
+                            left:15%;
+                            width:70%;
+                            height:0px;
+                            margin:auto;
+                            border-bottom: 2px solid $clrfff;
+                            transform: rotate(-45deg);
+                            
+
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            //close===end===
+            //goosList
+            .gdsList{
+                width:100%;
+                padding:6px 4% 30px;
+                font-size: 1.4rem;                
+            }
+            //goodsInfo 
+            .gdsInfo{
+                width:100%;
+                padding:6px 6% 30px;
+                font-size: 1.4rem;
+                .gdsInfoBtn{
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100%;
+                    height:41px;
+                    z-index: 8005;
+                    .gdsBtn{
+                        width:30%;
+                        height:41px;
+                        float:right;
+                        line-height:40px;
+                        color:#fff;
+                        text-align: center;
+                        cursor:pointer;
+                        &.frist{
+                            background-color:$clrf00;
+                            border-left: 1px solid $clrfff;
+                            &:active{
+                                background-color:rgba(255,0,0,0.9);
+                                box-shadow: 0 3px 5px rgba(255,0,0,0.14),0 3px 5px rgba(255,0,0,0.21),0 0 0 transparent;
+                                border:1px solid transparent;
+                            }
+                        }
+                        &.second{
+                            background-color:$clr666;
+                             &:active{
+                                background-color:rgba(120,120,120,0.95);
+                                box-shadow: 0 3px 5px rgba(120,120,120,0.14),0 3px 5px rgba(120,120,120,0.21),0 0 0 transparent;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .gdsInfoCont{
+                width:100%;
+                padding:15px 3px 0;
+                p{
+                    padding:0;
+                    margin:0;
+                    width:100%;
+                }
+                img{
+                    width:100%;
+                    vertical-align: top;
+                }
+            }
+            //goodsInfo==end==
+            .goodsCard{
+            width:100%;
+            padding:15px 0 11px;
+            border-bottom:1px solid $clrfff;
+            height:136px;
+            overflow: hidden;
+            &::after{
+                content:"";
+                display:block;
+                clear:both;
+            }
+            .left{
+                float:left;
+                width:40%;
+                height:110px;
+                overflow: hidden;
+                img{
+                    min-width:100%;
+                    min-height:100%;
+                    justify-content: center;
+                }
+            }
+            .right{
+                float:left;
+                width:60%;
+                height:110px;
+                padding-left:8px;
+                overflow:hidden;
+                .main{
+                    color:#222;
+                    height:19px;
+                    overflow: hidden;
+                }
+                .gary{
+                    color:#888;
+                    height: 19px;
+                    overflow:hidden;
+                    &.frist{
+                    margin-top:4px;
+                    }
+                }
+                .btnbar{
+                    width:100%;
+                    text-align:center;
+                    padding:0 5%;
+                    font-size:2rem;
+                    margin-top:10px;
+                    &.after{
+                        content:"";
+                        display: block;
+                        clear:both;
+                    }
+                    .rule{
+                        background-color:#444;
+                        color:#FFF;
+                        height:26px;
+                        margin:0;
+                        box-shadow:none;
+                        border:none;
+                        letter-spacing: 2px;
+                        border-radius:0;
+                        float:left;
+                        width:50%;
+                    }
+                    .goto{
+                        background-color:#f63333;
+                        color:#FFF;
+                        height:26px;
+                        margin:0;
+                        box-shadow:none;
+                        border:none;
+                        letter-spacing:2px;
+                        border-radius:0;
+                        float:left;  
+                        width:50%;                              
+                    }  
+                    .getfocus{
+                        width:100%;
+                        background-color:#f63333;
+                        color:#FFF;
+                        height:26px;
+                        margin:0;
+                        box-shadow:none;
+                        border:none;
+                        letter-spacing:8px;
+                        border-radius:0;
+                        margin-top:-15px;
+                    }                  
+                }
+            }
+          }
+             //goodsList===end====
+
+             //rule-content
+             .ruleCont{
+                 width:100%;
+                 padding:10px 12% 40px;
+                 .nextStep{
+                     width:100%;
+                     text-align:center;
+                     .btn{
+                         height:28px;
+                         padding:0 18px;
+                         background-color:#fff;
+                         color:#000;
+                     }
+                 }
+             }
+             .ruleTit{
+                 width:100%;
+                 text-align:center;
+                 color:#fff;
+                 font-size:1.9rem;
+                 letter-spacing: 6px;
+             }
+             .ruleImgBar{
+                 width:100%;
+                 padding:10px 25% 15px;
+                 img{
+                     width:100%;
+                     height:auto;
+                 }
+             }
+             .ruleTxt{
+                 width:100%;
+                 padding-bottom:10px; 
+                 .tit{
+                     width:100%;
+                     padding-bottom:5px;
+                     .titStyle{
+                        display: inline-block;
+                        color:$clr000;
+                        height:20px;
+                        line-height: 20px;
+                        border-bottom:1px solid #888;
+                        text-indent:5px;
+                        letter-spacing: 1px;
+                        font-size:1.4rem;
+                        span{
+                            float:left;
+                            display: block;
+                            padding:0 6px;
+                            background-color:#888;
+                            color:$clrfff;
+                            font-size:1.0rem;
+                            text-align: center;
+                            text-indent:0;
+                            letter-spacing: 0px;
+                        }
+                     }                     
+                 }
+                 .cont{
+                    color:#000;
+                    font-size:1.2rem;
+                    &.istit{
+                        padding:6px 0;
+                    }
+                }
+             }
+        //rule end========
+      }
+    }
+  
+
+}

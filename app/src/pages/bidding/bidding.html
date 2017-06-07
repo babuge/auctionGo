@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-navbar class="backbutton-hide" >
+      <ion-buttons start left>
+      <button ion-button icon-only color="light"  (click)="popback()">
+        <ion-icon name="ios-arrow-round-back-outline" class="pbm-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>拍卖吧</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="light" (click)="popover($event)">
+        <ion-icon name="md-more" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content #Content>
+   <!--tip-->
+  <div class="copy_tip" *ngIf="tipShowBar" (click)="toGoodsInfo()">
+    <div class="copy_tip_bar">
+      <div class="float-left frist">
+        <div class="copy_imgbar"><img [src]="'assets/images/1.jpg'" /></div>
+      </div>
+      <!--<div class="float-left end">{{tipCont.username+" "+tipCont.title}}</div>-->
+      <div class="float-left end">何朝坤&nbsp;&nbsp;&nbsp;&nbsp;成功竞拍Macintosh</div>
+    </div>
+  </div>
+  <!--goodimg-->
+  <div class="good-bar raggingbar" #sketchElement >
+    <img src="assets/images/1.jpg" alt="" class="goodsimg">
+    <!--滚动的字....barragebar-->
+    <div class="barragebar" >
+    </div>
+  </div>
+
+    <!--the fourth round-->
+  <!--站位-->
+  <div class="roundFour" *ngIf="showFrRound">
+    <!--到位-->
+    <div class="goPosi">
+      <!--定高 内容-->
+    <ul class="fourPosi" #roundFourH>
+      <li class="roundInfo">
+            <div class="FourTimesBar">
+              <div class="timer">{{countdownM+":"+countdownS}}</div>
+            </div>
+            <div class="tit">第四轮&nbsp;&nbsp;&nbsp;&nbsp;0元竞拍</div>
+            <div class="subtit">在某一秒内，如果只有您一人报价，拍卖品0元归您！</div>
+      </li>
+      <li class="roundTouch">
+          <div class="touchBox">
+            <div class="bgIcon"></div>
+          </div>
+      </li>
+    </ul>
+    </div>
+  </div>
+  
+  <!--push price-->
+<div class="proPric" *ngIf="showPriBar">
+    <ul class="pribar">
+        <li class="price">{{prinum}}</li>
+    </ul>
+</div>
+
+
+  <!--goodsInfo-->
+  <div class="goodsInfo" >
+    <ul class="gdInfoBar">
+        <ion-row>
+            <ion-col col-7>
+                <li class="main">拍卖品名称：<br>
+                  Macintosh</li>
+                <li class="main">市场价：6950元</li>
+                <li class="gary frist">拍卖状态：{{roundTip}} </li>
+            </ion-col>
+            <ion-col col-5>
+                <li class="timeNum">
+                    <!--show endTime-->
+                    <div class="newTime">{{countdownM+":"+countdownS}}</div>
+                </li>
+            </ion-col>
+        </ion-row>
+    </ul>
+      <!--.biddingTip{
+   .tipBox{-->
+    <ul class="biddingTip">
+      <li class="tipBox" [@heroState]='state'>
+        <div class="cont frist">相同竞价人数：98人</div>
+        <div class="cont">加油，胜利就在眼前!</div>
+      </li>
+    </ul>
+  </div>
+<!--sub tip-->
+<div class="subtip" *ngIf="showPriBar">点击以下金额竞拍,竞拍不成功时,不需支付该费用</div>
+<div class="selectBar">
+    <ul class="keyboardBar" #numprice>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>
+        <li ><span class="keyCode" (click)="toggleState($event)"></span></li>  
+    </ul>
+</div>
+</ion-content>

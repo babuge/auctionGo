@@ -1,0 +1,533 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>拍卖吧</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="light" (click)="popover($event)">
+        <ion-icon name="md-more" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content #popoverContent >
+   <!--tip-->
+  <div class="copy_tip" *ngIf="tipShowBar" (click)="toGoodsInfo('0')">
+    <div class="copy_tip_bar">
+      <div class="float-left frist">
+        <div class="copy_imgbar"><img [src]="'assets/images/1.jpg'" /></div>
+      </div>
+      <!--<div class="float-left end">{{tipCont.username+" "+tipCont.title}}</div>-->
+      <div class="float-left end">何朝坤&nbsp;&nbsp;&nbsp;&nbsp;成功竞拍Macintosh</div>
+    </div>
+  </div>
+  <!--goodimg-->
+  <div class="good-bar" #sketchElement >
+    <img src="assets/images/1.jpg" alt="" class="goodsimg">
+    <!--滚动的字-->
+    <div class="barragebar" >
+    </div>
+  </div>
+  <!--goodsInfo-->
+  <div class="goodsInfo" #popoverText>
+    <ul class="gdInfoBar">
+      <li class="main">拍卖品名称：Macintosh</li>
+      <li class="main">市场价：6950元</li>
+      <li class="gary frist">参与人数：569人</li>
+      <li class="gary">拍卖状态：第一轮 60—50元</li>
+      <li class="btnbar"><button ion-button class="rule" (click)="ruleFun()">拍卖规则</button><button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button></li>
+      <hr class="goodsHr"/>
+    </ul>
+    <!--goods流-->
+    <ul class="moreGoods" #morebar>
+      <li class="title" (click)="toGoodsList('1')">更多拍卖品</li>
+      <li class="goodsBox">
+        <div class="more" (click)="toGoodsInfo('1')"><img src="assets/images/1.jpg"/></div>
+        <div class="more" (click)="toGoodsInfo('1')"><img src="assets/images/1.jpg"/></div>
+      </li>
+    </ul>
+  </div>
+</ion-content>
+
+<!--goodsList-GardenBox-->
+<span *ngIf="showBackdrop" class="backdropBar"> 
+<ion-backdrop disable-activated role="presentation" (click)="backdrop('gdslist')" ></ion-backdrop>
+<div class="Mypopup">
+<!--弹窗内容-->
+  <!--close-->
+  <div class="GardenBox">
+    <ul class="relate">
+      <li class="garden">
+        <span class="close" (click)="closeTap('gdslist')"></span>
+        </li>
+    </ul>
+  </div>
+  <ion-scroll scrollY="true" class="popContent">
+    <!--content-->
+  <!--goodsList-->
+  <div class="gdsList">
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg"  (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg"  (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="false">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="true"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg"  (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg"  (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg"  (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>
+
+        <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" (click)="toGoodsInfo('0')" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+        <div class="btnbar" *ngIf="true">
+          <button ion-button class="rule">去围观</button>
+          <button ion-button class="goto" (click)="toBidding('goodsId')">马上拍</button>
+        </div>
+        <div class="btnbar" *ngIf="false"><button ion-button class="getfocus" (click)="toBidding('goodsId')">关注</button></div>
+      </li>
+    </ul>    
+
+  </div>
+</ion-scroll>
+<!--conten======end-->
+</div>
+</span>
+<!--goodsList-GardenBox==end===-->
+
+<!--auction-rule-->
+<span *ngIf="showRulePage" class="backdropBar"> 
+<ion-backdrop disable-activated role="presentation" (click)="backdrop('rule')" ></ion-backdrop>
+<div class="Mypopup">
+<!--弹窗内容-->
+  <!--close-->
+  <div class="GardenBox">
+    <ul class="relate">
+      <li class="garden">
+        <span class="close" (click)="closeTap('rule')"></span>
+        </li>
+    </ul>
+  </div>
+<ion-scroll scrollY="true" class="popContent">
+<!--rule-content-->
+<!--page1=====1-->
+    <span *ngIf="showRule1">
+<div class="ruleCont">
+  <div class="ruleTit">拍卖规则</div>
+  <div class="ruleImgBar"><img src="assets/images/friststep.png" alt=""></div>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>一</span>关键名词定义</div></li>
+    <li class="cont">A、竞买人：参与拍卖活动的自然人、法人或组织，称为竞买人。</li>
+    <li class="cont">B、竞拍：竞买人在拍卖过程中的报价行为，称为竞拍。</li>
+    <li class="cont">C、拍定物：指已拍卖成交的拍卖标的。</li>
+  </ul>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>二</span>适用法律</div></li>
+    <li class="cont">中国境内的拍卖活动，适用《中华人民共和国拍卖法》。</li>
+  </ul>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>三</span>拍卖规则</div></li>
+    <li class="cont istit">1、拍卖方式：</li>
+    <li class="cont">拍卖吧采用荷兰式拍卖（Dutch Auction），即“降价拍卖”。</li>
+    <li class="cont istit">2、拍卖轮次：</li>
+    <li class="cont">拍卖吧的拍卖共分为4轮。
+第一轮的竞价为50-36元，第二轮的竞价为35-21元，第三轮的竞价为20-6元。第一轮至第三轮为倒计时，如果三轮未能拍卖成功，则进入第四轮。
+第四轮的竞价为“0”元，本轮不限时，直至竞拍成功为止。</li>
+    <li class="cont istit">3、竞价方式：</li>
+    <li class="cont">竞买人点击“马上拍”，进入拍卖房间，点击键盘中的价格进行竞拍。竞拍金额仅在竞买人竞拍成功后才支付。</li>
+  </ul>
+  
+  <div class="nextStep"><button ion-button clear class="btn" (click)="nextPage('1')">下一页</button></div>
+</div>
+</span>
+<!--page2===========222222-->
+    <span *ngIf="showRule2">
+<div class="ruleCont">
+  <div class="ruleTit">拍卖规则</div>
+  <div class="ruleImgBar"><img src="assets/images/scondestep.png" alt=""></div>
+    <ul class="ruleTxt">
+    <li class="cont istit">4、竞拍成功规则：</li>
+    <li class="cont">在拍卖的过程中，拍卖吧系统将以秒为单位对竞买人的行为进行记录。如在某一秒中，只有某个竞买人报价，则竞拍成功，该场拍卖活动立即结束。</li>
+    <li class="cont istit">5、流拍：</li>
+    <li class="cont">在拍卖未成功的时候，当出现全场无人竞价时，经系统提示后持续三分钟依然无人竞价，则视为流拍。该场拍卖自动结束，竞买人选择其它商品继续竞拍。</li>
+    <li class="cont istit">6、竞拍费用支付：</li>
+    <li class="cont">竞拍结束后，竞买成功者根据自己的报价支付费用、快递费、填写收货地址。拍卖吧根据竞买人填写的有效资料进行发货。</li>
+  </ul>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>四</span>竞买人条件</div></li>
+    <li class="cont">竞买人进行竞拍时，需要具备三个条件：</li>
+    <li class="cont">1、竞买人为中华人民共和国公民、法人或组织。</li>
+    <li class="cont">2、参与竞拍前，按规定支付50元保证金。</li>
+    <li class="cont">3、竞买人需预缴一定额度的竞拍金，预缴（预留）的竞拍金不能低于5元。</li>
+  </ul>
+
+  <div class="nextStep"><button ion-button clear class="btn" (click)="nextPage('2')">下一页</button></div>
+</div>
+</span>
+<!--page3=====33333-->
+    <span *ngIf="showRule3">
+<div class="ruleCont">
+  <div class="ruleTit">拍卖规则</div>
+  <div class="ruleImgBar"><img src="assets/images/thirdstep.png" alt=""></div>
+    <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>五</span>保证金</div></li>
+    <li class="cont">为保证拍卖的公正性，以及杜绝违约行为，竞买人需要支付一定的保证金。
+拍卖吧的保证金为人民币50元，拍卖结束后，如果竞买人竞拍不成功，该保证金全额原路退回。</li>
+  </ul>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>六</span>违约</div></li>
+    <li class="cont">根据《拍卖法》条款，竞买人拍卖成功后，应及时履约。如出现违约情况，保证金不予退还。以下行为视为违约：1、在规定的时间内不支付竞拍资金及快递费；2、不正确填写收货信息，导致拍定物无法邮寄。视为违约，竞买人支付的保证金予以全额扣除。</li>
+  </ul>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>七</span>拍卖服务费</div></li>
+    <li class="cont">竞买人每次竞价，拍卖吧平台收取服务费为人民币0.50元。该费用从竞买人的竞拍金中自动扣除。</li>
+  </ul>
+  <ul class="ruleTxt">
+    <li class="tit"><div class="titStyle"><span>八</span>金蛋</div></li>
+    <li class="cont">竞买人在竞价的过程中，有机会获取系统赠予的金蛋。该收益竞买人可用于拍卖吧中竞买支付（不能提现）。</li>
+  </ul>
+  <div class="nextStep"><button ion-button clear class="btn" (click)="nextPage('3')">结束</button></div>
+</div>
+</span>
+<!--end-->
+</ion-scroll>
+</div>
+</span>
+<!--auction-rule==end===-->
+
+<!--goodsInfo-GardenBox-->
+<span *ngIf="showGdsInfo" class="backdropBar"> 
+<ion-backdrop disable-activated role="presentation" (click)="backdrop('gdsInfo')" ></ion-backdrop>
+<div class="Mypopup">
+<!--弹窗内容-->
+  <!--close-->
+  <div class="GardenBox">
+    <ul class="relate">
+      <li class="garden">
+        <span class="close" (click)="closeTap('gdsInfo')"></span>
+        </li>
+    </ul>
+  </div>
+  <ion-scroll scrollY="true" class="popContent">
+    <!--content-->
+  <!--goodsInfo-->
+  <div class="gdsInfo">
+    <!--for 循环-->
+    <ul class="goodsCard">
+      <li class="left">
+        <img src="assets/images/1.jpg" alt="" />
+      </li>
+      <li class="right">
+        <div class="main">拍卖品名称：Macintosh</div>
+        <div class="main">市场价：6950元</div>
+        <div class="gray frist">参与人数：569人</div>
+        <div class="gray">拍卖状态：第一轮 60—50元</div>
+      </li>
+    </ul>
+
+    <div class="gdsInfoCont">
+      <img src="assets/images/1.jpg" alt="" />
+      <br><br/>
+      <p>
+        <img src="assets/images/1.jpg" alt="">
+      </p>
+
+    </div>
+
+<!--底部固按钮-->
+    <div class="gdsInfoBtn">
+      <div class="gdsBtn frist" (click)="toBidding('1','ok')">马上拍</div>
+      <div class="gdsBtn second" (click)="toGoodsList('1')">更多拍卖品</div>
+    </div>
+
+
+
+
+  </div>
+</ion-scroll>
+<!--conten======end-->
+</div>
+</span>
+<!--goodsList-GardenBox==end===-->

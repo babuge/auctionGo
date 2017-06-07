@@ -1,0 +1,256 @@
+page-bidding{
+    ion-title{
+        letter-spacing: 5px;
+        text-align: center;
+        // text-indent: 32px;
+    }
+    .bar-button-md ion-icon.pbm-back{
+        font-size: 32px;
+    }
+//goods barrage
+.raggingbar{
+    margin-top:0;
+}
+//商品拍卖
+.goodsInfo{
+    .gdInfoBar{
+        width:100%;
+        margin:0;
+        height:105px;
+        padding:10px 28px 5px;
+        background-color:#f5f5f5;
+        &.after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .main{
+            color:#888;
+        }
+        .gary{
+            color:#222;
+            &.frist{
+                margin-top:4px;
+            }
+        }
+        .timeNum{
+            width:100%;
+            position:relative;
+            top:0;
+            left:0;
+            .newTime{
+                position: absolute;
+                top:13px;
+                right:0;
+                text-align: right;
+                font-size:3rem;
+                color:$clr666;
+            }
+        }              
+    }
+    //竞价提示
+    .biddingTip{
+        position:relative;
+        width:100%;
+        height:0;
+        top:0;
+        left:0;
+        z-index: 205;
+        .tipBox{
+            position:absolute;
+            width:100%;
+            left:0;
+            right:0;
+            bottom:0;
+            height:0px;
+            z-index: 206;
+            overflow:hidden;
+            background-color:rgba(0,0,0,0.6);
+            .cont{
+                width:100%;
+                text-align:center;
+                color:#fff;
+                font-size:1.6rem;
+                letter-spacing: 2px;
+                &.frist{
+                    padding-top:36px;
+                }
+            }
+        }
+    }
+}
+//push price
+.proPric{
+    width:100%;
+    height:0;
+    position: relative;
+    top:0;
+    left:0;
+    z-index: 210;
+    .pribar{
+        width:46px;
+        height:46px;
+        position:absolute;
+        top:0;
+        left:50%;
+        padding:0;
+        margin:0;
+        margin-top:-24px;
+        margin-left:-24px;
+        .price{
+            width:46px;
+            height:46px;
+            border-radius: 50%;
+            background-color:$clrf00;
+            line-height: 46px;
+            color:$clrfff;
+            font-size:22px;
+            text-align: center;
+        }
+    }
+}
+// sub tip
+.subtip{
+    margin-top:6px;
+    padding:5px 30px 10px;
+    color:$clr666;
+    font-size:1rem;
+    text-align: center;
+}
+//keyborder
+.selectBar{
+    width:100%;
+    height:auto;
+    padding-bottom: 20px;
+    &::after{
+        content:"";
+        display: block;
+        clear: both;
+    }
+    .keyboardBar{
+        padding:0 28px ;
+        margin:0;
+        li{
+            display: table;
+            width:20%;
+            height:50px;
+            padding:8px;
+            float:left;
+            vertical-align: middle;
+            cursor: pointer;
+            span.keyCode{
+                display: block;
+                width:100%;
+                height:100%;
+                border:1px solid $clr666;
+                border-radius: 2px;
+                vertical-align: middle;
+                text-align: center;
+                &.active{
+                color:#fff;
+                background-color:rgba(0,0,0,0.5);
+                box-shadow: 0 3px 5px rgba(0,0,0,0.14),0 3px 5px rgba(0,0,0,0.21),0 0 0 transparent;
+                border:1px solid transparent;
+                }
+                &:active{
+                    color:#fff;
+                    background-color:rgba(255,0,0,0.8);
+                    box-shadow: 0 3px 5px rgba(255,0,0,0.14),0 3px 5px rgba(255,0,0,0.21),0 0 0 transparent;
+                    border:1px solid transparent;
+                }
+                
+            }
+            
+        }
+    }
+}
+.roundFour{
+    position:relative;
+    width:100%;
+    height:0;
+    .goPosi{
+        width:100%;
+        margin-top:-25px;
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        z-index: 212;
+        .fourPosi{
+            position:relative;
+            bottom:0;
+            left:0;
+            z-index:213;
+            width:100%;
+            min-height:10px;
+            background-color:transparent;
+        }
+      
+    }
+    .roundInfo{
+        width:100%;
+        height:45%;
+        background-color: rgba(255,70,20,0.9);
+        .FourTimesBar{
+            width:100%;
+            padding-top:3%;
+            .timer{
+                width:22%;
+                min-height:10px;
+                border-radius: 50%;
+                background-color:$clrfff;
+                color:#222;
+                text-align:center;
+                font-size:2rem;
+                margin:auto;
+            }
+            
+        }
+        .tit{
+            width:100%;
+            text-align: center;
+            color:$clrfff;
+            font-size:2rem;
+            padding-top:3.5%;
+            }
+        .subtit{
+            width:100%;
+            padding-top:2%;
+            color:$clrfff;
+            font-size:1.2rem;
+            text-align: center;
+        }
+    }
+    .roundTouch{
+        width:100%;
+        height:55%;
+        background-color: $clrfff;
+        .touchBox{
+            width:100%;
+            padding-top:8%;
+            .bgIcon{
+                width:38%;
+                min-height:10px;
+                margin:auto;
+                background: url("../assets/images/go_bgStart.png") no-repeat center;
+                background-size:100% 100%;
+                cursor: pointer;
+                &:active{
+                    background: url("../assets/images/go_bgEnd.gif") no-repeat center;
+                    background-size:100% 100%;
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+}

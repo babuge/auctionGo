@@ -1,0 +1,42 @@
+
+<ion-content ionScroll='true'  #Content>
+
+    
+<ul class="ulPass">
+    <li class="logo_bar">
+        <div class="dect_bar"><img src="assets/images/logo1.png" alt=""></div>
+    </li>
+    <li>
+      <input type="number" [(ngModel)]="phone" maxlength="11" class="int" (focus)="toBottom()" placeholder="手机号"/>
+    </li>
+    <li *ngIf="showPW">
+        <!--<div class="float-left">
+            <ion-icon name="md-lock" class="iconColr"></ion-icon>
+        </div>-->
+
+        <div class="float-left fullW">
+        <input type="password" [(ngModel)]="passWord"  class="int" (focus)="toBottom()" placeholder="请输入密码"/>
+        </div>
+        <div class="icon-bar">
+            <ion-icon name="md-eye-off" class="iconColrTow" (click)="clikFun()"></ion-icon>
+        </div>
+    </li>
+    <li *ngIf="!showPW">
+        <!--<div class="float-left">
+            <ion-icon name="md-lock" class="iconColr"></ion-icon>
+        </div>-->
+        <div class="float-left fullW">
+        <input type="text" [(ngModel)]="passWord"  class="int" (focus)="toBottom()" placeholder="请输入密码"/>
+        </div>
+        <div class="icon-bar">
+            <ion-icon name="md-eye" class="iconColrTow" (click)="clikFun()"></ion-icon>
+        </div>
+    </li>
+    <li class="btn_bar"><button class="btn" [disabled]="!phone||!passWord" (click)="submite()">登录</button></li>
+    <li class="goResige"><div class="forget_btn" (click)="goForget()">忘记密码</div><div class="reg_btn " (click)="goReg()">新用户注册</div></li>    
+    <!--<li class="tip_login" *ngIf="pdFrist">小提示：初始密码为手机号，可在个人中心修改！</li>-->
+    <li class="publicImg"><div class="public">2017 密我科技</div></li>
+</ul>      
+
+
+</ion-content>

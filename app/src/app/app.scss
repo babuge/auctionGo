@@ -1,0 +1,260 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+//content---
+//====全局样式=====
+*{font-family: "微软雅黑";font-size: 1.4rem;}
+//====公共变量=====
+//字体灰
+$clr666:#666;
+// 白
+$clrfff:#fff;
+//白灰
+$clrf0:#f0f0f0;
+$clrf5:#f5f5f5;
+//黑
+$clr000:#000;
+//透明黑
+//red
+$clrf00:#f00000;
+$clr000a9:rgba(0,0,0,0.85);
+//popup背景
+$clrPopBC:#dedede;
+//====公共样式======
+button{
+    cursor: pointer;
+}
+.float-left{
+    float:left;
+}
+ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+    li{
+    margin:0;
+    padding:0;
+}}
+.float-right{
+    float:right;
+}
+.content-ios,
+.content-md{
+    background-color:$clrfff;
+}
+//tabs
+.tabs-md,.tabs-ios{
+    .tabbar{
+        height:3.6rem;
+    }
+.tab-button{
+    line-height: 3.6rem;
+    min-height: 3.6rem;
+    max-height:3.6rem;
+    color:$clrf0;
+    background-color:$clr000;
+    letter-spacing: 1.0rem;
+    // font-size:
+}    
+.tab-button[aria-selected=true]{
+    line-height:3.6rem;
+    color:$clr000;
+    background-color:$clrf0;
+    }
+}
+//header 
+.toolbar-title-md,
+.toolbar-title-ios {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: $clrf0;
+    letter-spacing: 0.6rem;
+}
+.toolbar-md,
+.toolbar-ios{
+    padding: 4px;
+    min-height: 45px;
+    max-height: 45px;
+    .toolbar-background-md,
+    .toolbar-background-ios{
+        background-color:$clr000;
+    }
+}
+
+//tip--copy
+.copy_tip{
+  position:fixed;
+  left:0;
+  top:48px;
+  width:100%;
+  height:0px;
+  min-height: 0px;
+  max-height: 0px;
+  background-color:transparent; 
+  z-index:998;
+  .copy_tip_bar{
+    position:relative;
+    width:82%;
+    height:42px;
+    top:3px;
+    left:9%;
+     z-index: 999;
+    .frist{
+      position:absolute;
+      top:0;
+      left:0;
+      width:42px;
+      height:32px;
+      border-right:none;
+      background-color: transparent;
+      padding:5px 4px;
+      .copy_imgbar{
+        width:100%;
+        height:100%;
+        padding:1px;
+        overflow: hidden;
+        text-align: center;
+        img{
+          min-height:100%;
+          min-margin:100%;
+        }
+      }
+    } 
+    .end{
+      width:100%;
+      height:32px;
+      padding-right: 8px;
+      border:1px solid #cacbcb;
+      border-radius:4px;
+      line-height: 32px;
+      color:$clr666;
+      background-color:rgba(255,255,255,0.4);
+      overflow: hidden;
+      text-indent:50px;
+      font-size:14px;
+    }  
+  }
+}
+//tip===end===
+//拍卖图&弹幕
+.good-bar{
+    position:relative;
+    margin-top:45px;
+    width:100%;
+    height:230px;
+    left:0;
+    z-index:200;
+    background-size:auto 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    img{
+        min-width:100%;
+        min-width:100%;
+    }
+    // 弹幕
+    .barragebar{
+        position:absolute;
+        width:100%;
+        height:200px;
+        left:0;
+        top:5px;
+        z-index:201;
+        overflow: hidden;
+        p.barrage{
+            display: inline-block;
+            margin:0;
+            position:absolute;
+            right:0;
+            top:0;
+            z-index: 202;
+            text-align:left;
+            height:18px;
+            overflow: hidden;
+        }
+    }
+}
+       //弹幕====end====
+
+//toast Css
+.toastCss{
+  background-color: transparent;
+  color:#fff;
+  font-size: 1rem;
+  text-align: center;
+  &.toast-md{.toast-wrapper{
+    background-color:#222;
+   }
+  }
+  &.toast-ios{    .toast-wrapper{
+    background-color:#222;     
+    }
+  }
+}
+
+
+//no backbutton
+.backbutton-hide{
+    .back-button.show-back-button{
+        display: none;
+    }
+}
+//覆盖层
+.popoverCss{
+    ////蒙版
+    ion-backdrop{
+        background-color:$clr000;
+        opacity: 0.7;
+    }
+    //popover背景
+    .popover-content{
+        background-color: $clr000a9;
+    }
+    .item-md,.item-ios{
+        background-color: transparent;
+        padding-left:10px;
+        padding-right:10px;
+        .item-inner{
+            padding-left:4px; 
+            border-bottom:1px solid #fff;
+            .label-md,.label-ios{
+                margin-bottom: 1px;
+            }
+            [item-right]{
+               margin-bottom: -5px;     
+            }
+        }
+    }
+    // .popover-wrapper{
+    //     width:100%;
+    //     height:100%;
+    //     background-color:rgba(255,255,255,0.5);
+    // }
+}
+
+
+
+//媒体查询=====
+@media screen and (max-width: 351px) { 
+   *{font-size:1.2rem;}
+
+   //goodslist goodsCard
+   .goodsCard{
+       .main,.gary{
+           height:16px;
+       }
+   }
+}
